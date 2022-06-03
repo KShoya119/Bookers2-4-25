@@ -1,11 +1,11 @@
 <h1>Books</h1>
   <% @books.each do |book| %>
     <div>
-      <div><%= link_to book_path(book.id) %></div>
+      <p><%= link_to book.title, book_path(book.id) %></p>
       <p><%= book.body %></p>
     </div>
   <% end %>
-    
+  
 <h1>New Book</h1>
 <%= form_with model: @book, url:'/books' do |f| %>
   <p>Titel</p>
