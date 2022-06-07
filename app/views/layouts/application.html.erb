@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://kit.fontawesome.com/85af9799b5.js" crossorigin="anonymous"></script>
     <title>Bookers2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -13,40 +14,87 @@
   <body>
     <header class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <div class="row">
-          <h3><%= link_to 'Bookers', root_path %></h3>
-          <div class="d-flex">
-          <% if user_signed_in? %>
-            <div class="nav-link text-light">
-              <%= link_to 'Home', user_path(current_user.id) %>
-            </div>
-            <div class="nav-link text-light">
-              <%= link_to 'Users', users_path %>
-            </div>
-            <div class="nav-link text-light">
-              <%= link_to 'Books', books_path %>
-            </div>
-            <div class="nav-link text-light　justify-content-end">
-              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-            </div>
-          <% else %>
-            <div class="nav-link text-light">
-              <%= link_to "Home", root_path %>
-            </div>
-            <div class="nav-link text-light">
-              <%= link_to "About", homes_about_path %>
-            </div>
-            <div class="nav-link text-light">
-              <%= link_to "Sign up", new_user_registration_path %>
-            </div>
-            <div class="nav-link text-light">
-              <%= link_to "Log in", new_user_session_path %>
-            </div>
+          <%= link_to root_path do %>
+            <span class="text-light navbar-brand">Bookers</span>
           <% end %>
+          
+          <div>
+          <ul class="navbar-nav ml-auto">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to user_path(current_user.id) do %>
+                <div class="nav-link text-light ">
+                  <i class="fa-solid fa-house-chimney"></i>
+                  Home
+                </div>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to  users_path do %>
+                <div class="nav-link text-light">
+                  <i class="fa-solid fa-users"></i>
+                  Users
+                </div>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to  books_path do %>
+                <div class="nav-link text-light">
+                  <i class="fa-solid fa-book-open"></i>
+                  Books
+                </div>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to  destroy_user_session_path, method: :delete do %>
+                <div class="nav-link text-light">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  Log out
+                </div>
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to root_path do %>
+                <div class="nav-link text-light">
+                  <i class="fa-solid fa-house-chimney"></i>
+                  Home
+                </div>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to homes_about_path do %>
+                <div class="nav-link text-light">
+                  <i class="fa-solid fa-link"></i>
+                  About
+                </div>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_registration_path do %>
+                <div class="nav-link text-light">
+                  <i class="fa-solid fa-user-plus"></i>
+                  Sign up
+                </div>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_session_path do %>
+                <div class="nav-link text-light">
+                  <i class="fa-solid fa-right-to-bracket"></i>
+                  Log in
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+          </ul>
           </div>
-        </div>
+          
       </div>
     </header>
+    <% flash.each do |key, value| %>
+    　<%= content_tag(:div, value, class: "#{key}") %>
+  　<% end %>
     <%= yield %>
   </body>
   <footer>

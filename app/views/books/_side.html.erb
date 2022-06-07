@@ -7,7 +7,9 @@
     <p class="border-top">introduction:<%= bookd.introduction %>	</p>
   </div>
   
-  <button style="button", class="btn-block"><%= link_to "user edit", edit_user_path(current_user.id) %></button>
+  <%= link_to edit_user_path(current_user.id) do %>
+    <button style="button", class="btn-block"><i class="fa-solid fa-user-pen"></i></button>
+  <% end %>
   
   <div class="mt-5">
   <h1>New Book</h1>

@@ -16,19 +16,20 @@
     <td><%= @book.title %></td>
     <td><%= @book.body %></td>
     
+    
+     <% if @book.user == current_user %>
+  　   <td>
+  　     <%= link_to edit_book_path(@book.id) do %>
+  　       <button style="background-color:limegreen ", class="text-white">Edit</button>
+        <% end %>
+  　   </td>
+    <% end %>
     <% if @book.user == current_user %>
       <td>
         <%= link_to book_path(@book),  method: :delete do %>
-          <button style="background-color: limegreen ", class="text-white">Destroy</button>
+          <button style="background-color: red ", class="text-white">Destroy</button>
         <% end %>
       </td>
-    <% end %>
-    <% if @book.user == current_user %>
-  　   <td>
-  　     <%= link_to edit_book_path(@book.id) do %>
-  　       <button style="background-color: red ", class="text-white">Edit</button>
-        <% end %>
-  　   </td>
     <% end %>
     
   </tr>

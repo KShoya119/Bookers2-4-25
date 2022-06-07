@@ -1,6 +1,17 @@
+<div class= "container px-5 px-sm-0 mt-3" >
+<% if @book.errors.any? %>
+  <h3><%= @book.errors.count %> errors prohibited this obj from being saved:</h3>
+<ul>
+  <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+</div>
+
+
 <div class="d-flex container px-5 px-sm-0">
 <%= render 'side', bookd: @book.user, user: @user, books: @book %>
-
 
 <div class="container col-md-8 offset-md-1">
 <div class="row">
