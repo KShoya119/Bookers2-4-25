@@ -1,10 +1,10 @@
-<div class="d-flex container px-5 px-sm-0">
-  <div class="container">
-    <%= render 'books/side', bookd: @user, user: @user, books: @book %>
-  </div>
+<div class="container px-5 px-sm-0">
+  <div class="row pr-5">
+    <div class="col-md-3">
+      <%= render 'books/side', bookd: @user, user: @user, books: @book %>
+    </div>
 
-  <div class="container col-md-8 offset-md-1">
-  <div class="row">
+  <div class="col-md-8 offset-md-1">
     <h1>Users</h1>
     <table class="table table-striped">
       
@@ -29,5 +29,6 @@
       
     </table>
   </div>
+  
   </div>
 </div>

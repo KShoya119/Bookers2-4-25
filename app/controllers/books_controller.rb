@@ -1,15 +1,17 @@
 class BooksController < ApplicationController
+  before_action :move_to_signed_in
   def index
     @book = Book.new
     @books = Book.all
     @book.user_id = current_user.id
   end
   
+  
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
-      redirect_to books_path, notice: 'You have created book successfully.'
+      redirect_to book_path(@book.id), notice: 'You have created book successfully.'
     else
       @books = Book.all
       @book.user_id = current_user.id
@@ -51,5 +53,10 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :body, :user_id)
   end
   
+  def move_to_signed_in
+    unless user_signed_in?
+      redirect_to  '/users/sign_in'
+    end
+  end
   
 end

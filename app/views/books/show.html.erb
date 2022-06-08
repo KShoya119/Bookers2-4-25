@@ -1,8 +1,10 @@
-<div class="d-flex container px-5 px-sm-0">
-<%= render 'side', bookd: @book.user, user: @user, books: @books %>
-
-<div class="container col-md-8 offset-md-1">
+<div class="container px-5 px-sm-0">
 <div class="row">
+<div class="col-md-3">
+  <%= render 'side', bookd: @book.user, user: @book.user, books: @books %>
+</div>
+
+<div class="col-md-8 offset-md-1">
 <h1>Book detail</h1>
 <table class="table table-striped">
   

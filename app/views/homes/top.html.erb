@@ -2,10 +2,10 @@
   <div>
     <div>
       <h1>
-        welcome to <i class="fa-solid fa-book"></i>Bookers !!
+        welcome to <i class="fas fa-book"></i></i><strong>Bookers !!</strong>
       </h1>
       <p>
-        In <i class="fa-solid fa-book"></i>Bookers,<br>
+        In <i class="fas fa-book"></i><strong>Bookers !!</strong>,<br>
         <br>
         you can share and exchange your opinions , inpressions , and emotions<br>
         <br>
@@ -14,7 +14,7 @@
       
       <div class="col-lg-8 mx-auto">
       <div class="center-block mb-3">
-      <%= link_to new_user_session_path do %>
+      <%= link_to "/users/sign_in" do %>
         <button style="background-color: blue ", class="text-white btn-block">
           Log in
         </button>
@@ -22,7 +22,7 @@
       </div>
       
       <div>
-      <%= link_to new_user_registration_path do %>
+      <%= link_to "/users/sign_up" do %>
         <button style="background-color: limegreen ", class="text-white btn-block">
           Sign up
         </button>

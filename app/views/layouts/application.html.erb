@@ -23,8 +23,8 @@
           <% if user_signed_in? %>
             <li>
               <%= link_to user_path(current_user.id) do %>
-                <div class="nav-link text-light ">
-                  <i class="fa-solid fa-house-chimney"></i>
+                  <div class="nav-link text-light">
+                  <i class="fas fa-home"></i>
                   Home
                 </div>
               <% end %>
@@ -32,7 +32,7 @@
             <li>
               <%= link_to  users_path do %>
                 <div class="nav-link text-light">
-                  <i class="fa-solid fa-users"></i>
+                  <i class="fas fa-users"></i>
                   Users
                 </div>
               <% end %>
@@ -40,7 +40,7 @@
             <li>
               <%= link_to  books_path do %>
                 <div class="nav-link text-light">
-                  <i class="fa-solid fa-book-open"></i>
+                  <i class="fas fa-book-open"></i>
                   Books
                 </div>
               <% end %>
@@ -48,7 +48,7 @@
             <li>
               <%= link_to  destroy_user_session_path, method: :delete do %>
                 <div class="nav-link text-light">
-                  <i class="fa-solid fa-right-from-bracket"></i>
+                  <i class="fas fa-sign-out-alt"></i>
                   Log out
                 </div>
               <% end %>
@@ -57,15 +57,15 @@
             <li>
               <%= link_to root_path do %>
                 <div class="nav-link text-light">
-                  <i class="fa-solid fa-house-chimney"></i>
+                  <i class="fas fa-home"></i>
                   Home
                 </div>
               <% end %>
             </li>
             <li>
-              <%= link_to homes_about_path do %>
+              <%= link_to home_about_path do %>
                 <div class="nav-link text-light">
-                  <i class="fa-solid fa-link"></i>
+                  <i class="fas fa-link"></i>
                   About
                 </div>
               <% end %>
@@ -73,7 +73,7 @@
             <li>
               <%= link_to new_user_registration_path do %>
                 <div class="nav-link text-light">
-                  <i class="fa-solid fa-user-plus"></i>
+                  <i class="fas fa-user-plus"></i>
                   Sign up
                 </div>
               <% end %>
@@ -81,7 +81,7 @@
             <li>
               <%= link_to new_user_session_path do %>
                 <div class="nav-link text-light">
-                  <i class="fa-solid fa-right-to-bracket"></i>
+                  <i class="fas fa-sign-in-alt"></i>
                   Log in
                 </div>
               <% end %>
