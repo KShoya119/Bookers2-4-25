@@ -13,21 +13,11 @@
       </p>
       
       <div class="col-lg-8 mx-auto">
-      <div class="center-block mb-3">
-      <%= link_to "/users/sign_in" do %>
-        <button style="background-color: blue ", class="text-white btn-block">
-          Log in
-        </button>
-      <% end %><br>
+      <div class="mb-3">
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-primary btn-block" %>
       </div>
       
-      <div>
-      <%= link_to "/users/sign_up" do %>
-        <button style="background-color: limegreen ", class="text-white btn-block">
-          Sign up
-        </button>
-      <% end %>
-      </div>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success btn-block"  %>
       </div>
     </div>
   </div>
